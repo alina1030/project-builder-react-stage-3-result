@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route , Routes} from 'react-router-dom';
 
 import Home from './components/Home';
 import QuizInstructions from './components/quiz/QuizInstructions';
@@ -9,10 +9,12 @@ import QuizSummary from './components/quiz/QuizSummary';
 function App() {
   return (
     <Router>
-      <Route path="/" exact component={Home} />
-      <Route path="/play/instructions" exact component={QuizInstructions} />
-      <Route path="/play/quiz" exact component={Play} />
-      <Route path="/play/quizSummary" exact component={QuizSummary} />
+      <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/play/instructions" element={<QuizInstructions />}/>
+      <Route path="/play/quiz" element={<Play />}/>
+      <Route path="/play/quizSummary" element={<QuizSummary />} />
+      </Routes>
     </Router>
   );
 }
